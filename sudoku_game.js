@@ -16,8 +16,8 @@ function sudokuDisplay() {
   for(var i = 0; i < 9; i++) {
     tr = document.createElement("tr");
     for(var k = 0; k < 9; k++) {
-      td = document.createElement("th");
-      td.innerHTML = k + 1;
+      td = document.createElement("td");
+      td.innerHTML = randomGenerator();
       if((k + 1) % 3 == 0 && (k + 1) != 9) {
         td.style.borderRight = "3px solid black";
       }
@@ -29,4 +29,9 @@ function sudokuDisplay() {
     table.appendChild(tr);
   }
   gameArea.appendChild(table);
+}
+
+function randomGenerator() {
+  var randomNum = Math.floor((Math.random() * 9) + 1);
+  return randomNum;
 }
